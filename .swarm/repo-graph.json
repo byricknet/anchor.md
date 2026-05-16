@@ -1,0 +1,345 @@
+{
+  "schema_version": "1.0.0",
+  "workspaceRoot": "/Users/rick/dev/byrick.net/anchor.md",
+  "nodes": {
+    "/Users/rick/dev/byrick.net/anchor.md/src/App.tsx": {
+      "filePath": "/Users/rick/dev/byrick.net/anchor.md/src/App.tsx",
+      "moduleName": "src/App.tsx",
+      "exports": [
+        "App"
+      ],
+      "imports": [
+        "./features/builder/components/ConfigWizard",
+        "./features/preview/MarkdownPreview",
+        "./features/preview/PreviewHeader"
+      ],
+      "language": "typescript",
+      "mtime": "2026-05-16T23:35:38.070Z"
+    },
+    "/Users/rick/dev/byrick.net/anchor.md/src/features/builder/components/AdvancedToggles.tsx": {
+      "filePath": "/Users/rick/dev/byrick.net/anchor.md/src/features/builder/components/AdvancedToggles.tsx",
+      "moduleName": "src/features/builder/components/AdvancedToggles.tsx",
+      "exports": [
+        "AdvancedToggles"
+      ],
+      "imports": [
+        "../../../lib/utils"
+      ],
+      "language": "typescript",
+      "mtime": "2026-05-16T23:35:49.104Z"
+    },
+    "/Users/rick/dev/byrick.net/anchor.md/src/features/builder/components/ConfigWizard.tsx": {
+      "filePath": "/Users/rick/dev/byrick.net/anchor.md/src/features/builder/components/ConfigWizard.tsx",
+      "moduleName": "src/features/builder/components/ConfigWizard.tsx",
+      "exports": [
+        "ConfigWizard"
+      ],
+      "imports": [
+        "react",
+        "../../../store/useConfigStore",
+        "./StackGrid",
+        "./VibeSlider",
+        "./AdvancedToggles"
+      ],
+      "language": "typescript",
+      "mtime": "2026-05-16T23:35:41.886Z"
+    },
+    "/Users/rick/dev/byrick.net/anchor.md/src/features/builder/components/StackGrid.tsx": {
+      "filePath": "/Users/rick/dev/byrick.net/anchor.md/src/features/builder/components/StackGrid.tsx",
+      "moduleName": "src/features/builder/components/StackGrid.tsx",
+      "exports": [
+        "StackGrid"
+      ],
+      "imports": [
+        "../../../types/schema",
+        "../../../lib/utils"
+      ],
+      "language": "typescript",
+      "mtime": "2026-05-16T23:40:46.431Z"
+    },
+    "/Users/rick/dev/byrick.net/anchor.md/src/features/builder/components/VibeSlider.tsx": {
+      "filePath": "/Users/rick/dev/byrick.net/anchor.md/src/features/builder/components/VibeSlider.tsx",
+      "moduleName": "src/features/builder/components/VibeSlider.tsx",
+      "exports": [
+        "VibeSlider"
+      ],
+      "imports": [
+        "../../../lib/utils"
+      ],
+      "language": "typescript",
+      "mtime": "2026-05-16T23:35:44.297Z"
+    },
+    "/Users/rick/dev/byrick.net/anchor.md/src/features/compiler/generate.ts": {
+      "filePath": "/Users/rick/dev/byrick.net/anchor.md/src/features/compiler/generate.ts",
+      "moduleName": "src/features/compiler/generate.ts",
+      "exports": [
+        "compileMarkdown"
+      ],
+      "imports": [
+        "../../types/schema",
+        "./rules/stacks",
+        "./rules/vibes"
+      ],
+      "language": "typescript",
+      "mtime": "2026-05-16T23:40:39.689Z"
+    },
+    "/Users/rick/dev/byrick.net/anchor.md/src/features/compiler/rules/stacks.ts": {
+      "filePath": "/Users/rick/dev/byrick.net/anchor.md/src/features/compiler/rules/stacks.ts",
+      "moduleName": "src/features/compiler/rules/stacks.ts",
+      "exports": [
+        "stackRules"
+      ],
+      "imports": [],
+      "language": "typescript",
+      "mtime": "2026-05-16T23:41:54.206Z"
+    },
+    "/Users/rick/dev/byrick.net/anchor.md/src/features/compiler/rules/vibes.ts": {
+      "filePath": "/Users/rick/dev/byrick.net/anchor.md/src/features/compiler/rules/vibes.ts",
+      "moduleName": "src/features/compiler/rules/vibes.ts",
+      "exports": [
+        "vibeRules"
+      ],
+      "imports": [],
+      "language": "typescript",
+      "mtime": "2026-05-16T23:40:08.463Z"
+    },
+    "/Users/rick/dev/byrick.net/anchor.md/src/features/preview/MarkdownPreview.tsx": {
+      "filePath": "/Users/rick/dev/byrick.net/anchor.md/src/features/preview/MarkdownPreview.tsx",
+      "moduleName": "src/features/preview/MarkdownPreview.tsx",
+      "exports": [
+        "MarkdownPreview"
+      ],
+      "imports": [
+        "react",
+        "react-markdown",
+        "rehype-highlight",
+        "../../store/useConfigStore",
+        "../compiler/generate"
+      ],
+      "language": "typescript",
+      "mtime": "2026-05-16T23:35:58.672Z"
+    },
+    "/Users/rick/dev/byrick.net/anchor.md/src/features/preview/PreviewHeader.tsx": {
+      "filePath": "/Users/rick/dev/byrick.net/anchor.md/src/features/preview/PreviewHeader.tsx",
+      "moduleName": "src/features/preview/PreviewHeader.tsx",
+      "exports": [
+        "PreviewHeader"
+      ],
+      "imports": [
+        "react",
+        "../../store/useConfigStore",
+        "../compiler/generate"
+      ],
+      "language": "typescript",
+      "mtime": "2026-05-16T23:35:55.491Z"
+    },
+    "/Users/rick/dev/byrick.net/anchor.md/src/lib/utils.ts": {
+      "filePath": "/Users/rick/dev/byrick.net/anchor.md/src/lib/utils.ts",
+      "moduleName": "src/lib/utils.ts",
+      "exports": [
+        "cn"
+      ],
+      "imports": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "language": "typescript",
+      "mtime": "2026-05-16T23:30:02.223Z"
+    },
+    "/Users/rick/dev/byrick.net/anchor.md/src/main.tsx": {
+      "filePath": "/Users/rick/dev/byrick.net/anchor.md/src/main.tsx",
+      "moduleName": "src/main.tsx",
+      "exports": [],
+      "imports": [
+        "react",
+        "react-dom/client",
+        "./index.css",
+        "./App.tsx"
+      ],
+      "language": "typescript",
+      "mtime": "2026-05-16T23:30:39.971Z"
+    },
+    "/Users/rick/dev/byrick.net/anchor.md/src/store/useConfigStore.ts": {
+      "filePath": "/Users/rick/dev/byrick.net/anchor.md/src/store/useConfigStore.ts",
+      "moduleName": "src/store/useConfigStore.ts",
+      "exports": [
+        "useConfigStore"
+      ],
+      "imports": [
+        "zustand",
+        "zustand/middleware"
+      ],
+      "language": "typescript",
+      "mtime": "2026-05-16T23:30:06.511Z"
+    },
+    "/Users/rick/dev/byrick.net/anchor.md/src/types/schema.ts": {
+      "filePath": "/Users/rick/dev/byrick.net/anchor.md/src/types/schema.ts",
+      "moduleName": "src/types/schema.ts",
+      "exports": [
+        "VibeEnum",
+        "TechStackEnum",
+        "StackCategory",
+        "stackCategories",
+        "ArchitectConfigSchema",
+        "ArchitectConfig",
+        "Vibe",
+        "TechStack"
+      ],
+      "imports": [
+        "zod"
+      ],
+      "language": "typescript",
+      "mtime": "2026-05-16T23:41:42.639Z"
+    },
+    "/Users/rick/dev/byrick.net/anchor.md/src/vite-env.d.ts": {
+      "filePath": "/Users/rick/dev/byrick.net/anchor.md/src/vite-env.d.ts",
+      "moduleName": "src/vite-env.d.ts",
+      "exports": [],
+      "imports": [],
+      "language": "typescript",
+      "mtime": "2026-05-16T23:30:40.217Z"
+    },
+    "/Users/rick/dev/byrick.net/anchor.md/vite.config.ts": {
+      "filePath": "/Users/rick/dev/byrick.net/anchor.md/vite.config.ts",
+      "moduleName": "vite.config.ts",
+      "exports": [
+        "defineConfig"
+      ],
+      "imports": [
+        "vite",
+        "@vitejs/plugin-react",
+        "@tailwindcss/vite"
+      ],
+      "language": "typescript",
+      "mtime": "2026-05-16T23:29:42.837Z"
+    }
+  },
+  "edges": [
+    {
+      "source": "/Users/rick/dev/byrick.net/anchor.md/src/App.tsx",
+      "target": "/Users/rick/dev/byrick.net/anchor.md/src/features/builder/components/ConfigWizard.tsx",
+      "importSpecifier": "./features/builder/components/ConfigWizard",
+      "importType": "named"
+    },
+    {
+      "source": "/Users/rick/dev/byrick.net/anchor.md/src/App.tsx",
+      "target": "/Users/rick/dev/byrick.net/anchor.md/src/features/preview/MarkdownPreview.tsx",
+      "importSpecifier": "./features/preview/MarkdownPreview",
+      "importType": "named"
+    },
+    {
+      "source": "/Users/rick/dev/byrick.net/anchor.md/src/App.tsx",
+      "target": "/Users/rick/dev/byrick.net/anchor.md/src/features/preview/PreviewHeader.tsx",
+      "importSpecifier": "./features/preview/PreviewHeader",
+      "importType": "named"
+    },
+    {
+      "source": "/Users/rick/dev/byrick.net/anchor.md/src/features/builder/components/AdvancedToggles.tsx",
+      "target": "/Users/rick/dev/byrick.net/anchor.md/src/lib/utils.ts",
+      "importSpecifier": "../../../lib/utils",
+      "importType": "named"
+    },
+    {
+      "source": "/Users/rick/dev/byrick.net/anchor.md/src/features/builder/components/ConfigWizard.tsx",
+      "target": "/Users/rick/dev/byrick.net/anchor.md/src/store/useConfigStore.ts",
+      "importSpecifier": "../../../store/useConfigStore",
+      "importType": "named"
+    },
+    {
+      "source": "/Users/rick/dev/byrick.net/anchor.md/src/features/builder/components/ConfigWizard.tsx",
+      "target": "/Users/rick/dev/byrick.net/anchor.md/src/features/builder/components/AdvancedToggles.tsx",
+      "importSpecifier": "./AdvancedToggles",
+      "importType": "named"
+    },
+    {
+      "source": "/Users/rick/dev/byrick.net/anchor.md/src/features/builder/components/ConfigWizard.tsx",
+      "target": "/Users/rick/dev/byrick.net/anchor.md/src/features/builder/components/StackGrid.tsx",
+      "importSpecifier": "./StackGrid",
+      "importType": "named"
+    },
+    {
+      "source": "/Users/rick/dev/byrick.net/anchor.md/src/features/builder/components/ConfigWizard.tsx",
+      "target": "/Users/rick/dev/byrick.net/anchor.md/src/features/builder/components/VibeSlider.tsx",
+      "importSpecifier": "./VibeSlider",
+      "importType": "named"
+    },
+    {
+      "source": "/Users/rick/dev/byrick.net/anchor.md/src/features/builder/components/StackGrid.tsx",
+      "target": "/Users/rick/dev/byrick.net/anchor.md/src/lib/utils.ts",
+      "importSpecifier": "../../../lib/utils",
+      "importType": "named"
+    },
+    {
+      "source": "/Users/rick/dev/byrick.net/anchor.md/src/features/builder/components/StackGrid.tsx",
+      "target": "/Users/rick/dev/byrick.net/anchor.md/src/types/schema.ts",
+      "importSpecifier": "../../../types/schema",
+      "importType": "named"
+    },
+    {
+      "source": "/Users/rick/dev/byrick.net/anchor.md/src/features/builder/components/VibeSlider.tsx",
+      "target": "/Users/rick/dev/byrick.net/anchor.md/src/lib/utils.ts",
+      "importSpecifier": "../../../lib/utils",
+      "importType": "named"
+    },
+    {
+      "source": "/Users/rick/dev/byrick.net/anchor.md/src/features/compiler/generate.ts",
+      "target": "/Users/rick/dev/byrick.net/anchor.md/src/types/schema.ts",
+      "importSpecifier": "../../types/schema",
+      "importType": "named"
+    },
+    {
+      "source": "/Users/rick/dev/byrick.net/anchor.md/src/features/compiler/generate.ts",
+      "target": "/Users/rick/dev/byrick.net/anchor.md/src/features/compiler/rules/stacks.ts",
+      "importSpecifier": "./rules/stacks",
+      "importType": "named"
+    },
+    {
+      "source": "/Users/rick/dev/byrick.net/anchor.md/src/features/compiler/generate.ts",
+      "target": "/Users/rick/dev/byrick.net/anchor.md/src/features/compiler/rules/vibes.ts",
+      "importSpecifier": "./rules/vibes",
+      "importType": "named"
+    },
+    {
+      "source": "/Users/rick/dev/byrick.net/anchor.md/src/features/preview/MarkdownPreview.tsx",
+      "target": "/Users/rick/dev/byrick.net/anchor.md/src/store/useConfigStore.ts",
+      "importSpecifier": "../../store/useConfigStore",
+      "importType": "named"
+    },
+    {
+      "source": "/Users/rick/dev/byrick.net/anchor.md/src/features/preview/MarkdownPreview.tsx",
+      "target": "/Users/rick/dev/byrick.net/anchor.md/src/features/compiler/generate.ts",
+      "importSpecifier": "../compiler/generate",
+      "importType": "named"
+    },
+    {
+      "source": "/Users/rick/dev/byrick.net/anchor.md/src/features/preview/PreviewHeader.tsx",
+      "target": "/Users/rick/dev/byrick.net/anchor.md/src/store/useConfigStore.ts",
+      "importSpecifier": "../../store/useConfigStore",
+      "importType": "named"
+    },
+    {
+      "source": "/Users/rick/dev/byrick.net/anchor.md/src/features/preview/PreviewHeader.tsx",
+      "target": "/Users/rick/dev/byrick.net/anchor.md/src/features/compiler/generate.ts",
+      "importSpecifier": "../compiler/generate",
+      "importType": "named"
+    },
+    {
+      "source": "/Users/rick/dev/byrick.net/anchor.md/src/main.tsx",
+      "target": "/Users/rick/dev/byrick.net/anchor.md/src/App.tsx",
+      "importSpecifier": "./App.tsx",
+      "importType": "default"
+    },
+    {
+      "source": "/Users/rick/dev/byrick.net/anchor.md/src/main.tsx",
+      "target": "/Users/rick/dev/byrick.net/anchor.md/src/index.css",
+      "importSpecifier": "./index.css",
+      "importType": "sideeffect"
+    }
+  ],
+  "metadata": {
+    "generatedAt": "2026-05-16T23:41:54.244Z",
+    "generator": "repo-graph",
+    "nodeCount": 16,
+    "edgeCount": 20
+  }
+}
