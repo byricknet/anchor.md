@@ -2,6 +2,8 @@ import { z } from "zod"
 
 export const VibeEnum = z.enum(["speedrun", "balanced", "strict-tdd", "architect"])
 
+export const DomainEnum = z.enum(["frontend", "mobile", "fullstack", "backend"])
+
 export const TechStackEnum = z.enum([
   "react", "vue", "sveltekit", "nextjs",
   "flutter", "react-native", "expo",
@@ -10,65 +12,45 @@ export const TechStackEnum = z.enum([
   "tailwind", "docker", "github-actions", "jest",
 ])
 
-export type StackCategory = "frontend" | "mobile" | "backend" | "database" | "tooling"
+export type Domain = z.infer<typeof DomainEnum>
 
-export const stackCategories: { label: string; key: StackCategory; items: { value: TechStack; label: string }[] }[] = [
-  {
-    label: "Frontend",
-    key: "frontend",
-    items: [
-      { value: "react", label: "React" },
-      { value: "nextjs", label: "Next.js" },
-      { value: "vue", label: "Vue" },
-      { value: "sveltekit", label: "SvelteKit" },
-    ],
-  },
-  {
-    label: "Mobile",
-    key: "mobile",
-    items: [
-      { value: "flutter", label: "Flutter" },
-      { value: "react-native", label: "React Native" },
-      { value: "expo", label: "Expo" },
-    ],
-  },
-  {
-    label: "Backend",
-    key: "backend",
-    items: [
-      { value: "node", label: "Node.js" },
-      { value: "nest", label: "NestJS" },
-      { value: "fastapi", label: "FastAPI" },
-      { value: "django", label: "Django" },
-      { value: "go", label: "Go" },
-    ],
-  },
-  {
-    label: "Database",
-    key: "database",
-    items: [
-      { value: "supabase", label: "Supabase" },
-      { value: "postgresql", label: "PostgreSQL" },
-      { value: "mongodb", label: "MongoDB" },
-      { value: "firebase", label: "Firebase" },
-    ],
-  },
-  {
-    label: "Tooling",
-    key: "tooling",
-    items: [
-      { value: "tailwind", label: "Tailwind CSS" },
-      { value: "docker", label: "Docker" },
-      { value: "github-actions", label: "GitHub Actions" },
-      { value: "jest", label: "Jest/Cypress" },
-    ],
-  },
-]
+export const domainTechs: Record<Domain, TechStack[]> = {
+  frontend: ["react", "nextjs", "vue", "sveltekit", "tailwind"],
+  mobile: ["react-native", "expo", "flutter"],
+  fullstack: ["react", "nextjs", "node", "nest", "supabase", "postgresql", "tailwind"],
+  backend: ["node", "nest", "fastapi", "django", "go", "supabase", "postgresql", "mongodb", "firebase"],
+}
+
+export const cicdTechs: TechStack[] = ["docker", "github-actions", "jest"]
+
+export const allStackLabels: Record<TechStack, string> = {
+  react: "React",
+  vue: "Vue",
+  sveltekit: "SvelteKit",
+  nextjs: "Next.js",
+  flutter: "Flutter",
+  "react-native": "React Native",
+  expo: "Expo",
+  node: "Node.js",
+  nest: "NestJS",
+  fastapi: "FastAPI",
+  django: "Django",
+  go: "Go",
+  supabase: "Supabase",
+  postgresql: "PostgreSQL",
+  mongodb: "MongoDB",
+  firebase: "Firebase",
+  tailwind: "Tailwind CSS",
+  docker: "Docker",
+  "github-actions": "GitHub Actions",
+  jest: "Jest / Cypress",
+}
 
 export const ArchitectConfigSchema = z.object({
   projectName: z.string().min(1, "Project name is required"),
   vibe: VibeEnum.default("balanced"),
-  stack: z.array(TechStackEnum).min(1, "Select at least one technology"),
+  domain: DomainEnum.default("frontend"),
+  stack: z.array(TechStackEnum).default([]),
   customInstructions: z.string().optional(),
   enforceTypes: z.boolean().default(true),
   useComments: z.boolean().default(true),

@@ -1,30 +1,128 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
-  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-sans: "Geist", system-ui, -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-surface: #131313;
+  --color-surface-dim: #131313;
+  --color-surface-bright: #3a3939;
+  --color-surface-container-lowest: #0e0e0e;
+  --color-surface-container-low: #1c1b1b;
+  --color-surface-container: #201f1f;
+  --color-surface-container-high: #2a2a2a;
+  --color-surface-container-highest: #353534;
+  --color-on-surface: #e5e2e1;
+  --color-on-surface-variant: #c2c6d6;
+  --color-primary: #adc6ff;
+  --color-primary-container: #4d8eff;
+  --color-on-primary: #002e6a;
+  --color-on-primary-container: #00285d;
+  --color-secondary: #c8c6c5;
+  --color-secondary-container: #474746;
+  --color-on-secondary: #313030;
+  --color-tertiary: #ffb786;
+  --color-tertiary-container: #df7412;
+  --color-on-tertiary: #502400;
+  --color-error: #ffb4ab;
+  --color-error-container: #93000a;
+  --color-on-error: #690005;
+  --color-outline: #8c909f;
+  --color-outline-variant: #424754;
+  --color-inverse-primary: #005ac2;
+  --color-inverse-surface: #e5e2e1;
+  --color-inverse-on-surface: #313030;
+  --color-on-background: #e5e2e1;
+  --color-background: #131313;
+  --color-border: #ffffff;
+  --color-overlay: #ffffff;
+
+  --font-weight-body-lg: 400;
+  --font-weight-headline-lg: 600;
+  --font-weight-headline-md: 600;
+  --font-weight-headline-sm: 500;
+  --font-weight-label-caps: 600;
+  --font-weight-label-mono: 400;
+
+  --letter-spacing-headline-lg: -0.02em;
+  --letter-spacing-headline-md: -0.01em;
+  --letter-spacing-headline-sm: -0.01em;
+  --letter-spacing-label-caps: 0.05em;
+  --letter-spacing-label-mono: 0.02em;
+
+  --radius-xl: 0.5rem;
+  --radius-full: 0.75rem;
+
+  --spacing-gutter: 1.5rem;
+  --spacing-stack-sm: 0.5rem;
+  --spacing-stack-md: 1rem;
+  --spacing-stack-lg: 2rem;
+  --spacing-container-padding: 2rem;
+}
+
+:root:not(.dark) {
+  --color-surface: #ffffff;
+  --color-surface-dim: #f2f3f5;
+  --color-surface-bright: #ffffff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f8f9fa;
+  --color-surface-container: #f0f1f3;
+  --color-surface-container-high: #e6e8ea;
+  --color-surface-container-highest: #d9dbde;
+  --color-on-surface: #1c1c1e;
+  --color-on-surface-variant: #55555e;
+  --color-primary: #2563eb;
+  --color-primary-container: #dbeafe;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #1e3a5f;
+  --color-secondary: #6b7280;
+  --color-secondary-container: #e5e7eb;
+  --color-on-secondary: #ffffff;
+  --color-tertiary: #d97706;
+  --color-tertiary-container: #fef3c7;
+  --color-on-tertiary: #ffffff;
+  --color-error: #dc2626;
+  --color-error-container: #fee2e2;
+  --color-on-error: #ffffff;
+  --color-outline: #9ca3af;
+  --color-outline-variant: #d1d5db;
+  --color-inverse-primary: #93bbfd;
+  --color-inverse-surface: #1c1c1e;
+  --color-inverse-on-surface: #f2f3f5;
+  --color-on-background: #1c1c1e;
+  --color-background: #f2f3f5;
+  --color-border: #000000;
+  --color-overlay: #000000;
 }
 
 @layer base {
-  *, *::before, *::after {
-    border-color: #e5e7eb;
-  }
-
   body {
     margin: 0;
     font-family: var(--font-sans);
-    background: #f8fafc;
-    color: #0f172a;
+    background: #f2f3f5;
+    color: #1c1c1e;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
+  .dark body,
+  body.dark {
+    background: #050505;
+    color: #e5e2e1;
+  }
+
   ::selection {
-    background: rgba(99, 102, 241, 0.15);
+    background: rgba(37, 99, 235, 0.2);
+  }
+
+  .dark ::selection {
+    background: rgba(173, 198, 255, 0.2);
   }
 
   :focus-visible {
-    outline: 2px solid #6366f1;
+    outline: 2px solid var(--color-primary);
     outline-offset: 2px;
   }
 }
@@ -32,6 +130,6 @@
 @layer utilities {
   .scrollbar-thin {
     scrollbar-width: thin;
-    scrollbar-color: #d1d5db transparent;
+    scrollbar-color: rgba(128, 128, 128, 0.2) transparent;
   }
 }

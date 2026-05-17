@@ -1,30 +1,22 @@
-import type { ArchitectConfig, StackCategory } from "../../types/schema"
-import { stackCategories } from "../../types/schema"
+import type { ArchitectConfig, Domain } from "../../types/schema"
+import { allStackLabels } from "../../types/schema"
 import { stackRules } from "./rules/stacks"
 import { vibeRules } from "./rules/vibes"
 
-const categoryHeadings: Record<StackCategory, string> = {
+const domainHeadings: Record<Domain, string> = {
   frontend: "Frontend",
   mobile: "Mobile",
+  fullstack: "Fullstack",
   backend: "Backend",
-  database: "Database & Storage",
-  tooling: "Tooling & Infrastructure",
 }
 
 export function compileMarkdown(config: ArchitectConfig): string {
-  const stackLabels = config.stack
-    .map((t) => {
-      for (const cat of stackCategories) {
-        const found = cat.items.find((i) => i.value === t)
-        if (found) return found.label
-      }
-      return t
-    })
-    .join(", ")
+  const stackLabels = config.stack.map((t) => allStackLabels[t] ?? t).join(", ")
 
   let md = `# ⚓ Project Architecture & AI Directives\n`
   md += `**Project:** ${config.projectName}\n`
   md += `**Governance Level:** ${vibeLabel(config.vibe)}\n`
+  md += `**Domain:** ${domainHeadings[config.domain]}\n`
   md += `**Primary Stack:** ${stackLabels}\n\n`
 
   md += `## 🤖 Agentic Behavior & CLI Operations\n`
@@ -37,24 +29,9 @@ export function compileMarkdown(config: ArchitectConfig): string {
 
   md += `## 🏗️ Architectural Boundaries\n`
 
-  for (const cat of stackCategories) {
-    const selected = config.stack.filter((t) =>
-      cat.items.some((i) => i.value === t),
-    )
-    if (selected.length === 0) continue
-
-    md += `### ${categoryHeadings[cat.key]}\n`
-    md += `<Stack: ${selected.map((s) => {
-      for (const item of cat.items) {
-        if (item.value === s) return item.label
-      }
-      return s
-    }).join(", ")}>\n\n`
-
-    selected.forEach((tech) => {
-      md += `${stackRules[tech]}\n\n`
-    })
-  }
+  config.stack.forEach((tech) => {
+    md += `${stackRules[tech]}\n\n`
+  })
 
   if (config.enforceTypes) {
     md += `## 🛡️ Type Safety Boundaries\n`

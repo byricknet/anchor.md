@@ -37,3 +37,10 @@ coverage/
 
 # Reference
 reference.md
+
+# opencode
+.opencode/
+.swarm/
+
+# Temp
+temp/
