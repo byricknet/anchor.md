@@ -24,7 +24,7 @@ export function StepDomain() {
     <div className="flex flex-col">
       {/* Mobile header */}
       <div className="lg:hidden mb-5">
-        <p className="text-[11px] font-semibold text-primary uppercase tracking-[0.1em] mb-1">
+        <p className="text-[11px] font-semibold text-primary uppercase tracking-widest mb-1">
           STEP {config.domain ? "2" : "1"} OF 4
         </p>
         <h1 className="text-[32px] font-semibold text-on-background tracking-tight">

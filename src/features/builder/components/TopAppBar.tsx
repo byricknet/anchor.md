@@ -6,12 +6,12 @@ interface Props {
   onPreviewClick: () => void
 }
 
-export function TopAppBar({ onMenuClick, onPreviewClick }: Props) {
+export function TopAppBar({ onPreviewClick }: Props) {
   const { isDark, toggleTheme } = useTheme()
   const { t, locale, setLocale } = useTranslation()
 
   return (
-    <header className="bg-background border-b border-border/[0.06] flex justify-between items-center w-full px-4 lg:px-container-padding h-12 lg:h-16 shrink-0 z-10">
+    <header className="bg-background border-b border-border/6 flex justify-between items-center w-full px-4 lg:px-container-padding h-12 lg:h-16 shrink-0 z-10">
       <div className="flex items-center gap-2">
         <div className="text-[25px] lg:text-[24px] font-semibold text-on-background tracking-tight leading-none">
           anchor

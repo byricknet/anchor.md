@@ -39,7 +39,7 @@ export function StepFoundation() {
             onChange={(e) => updateConfig({ projectName: e.target.value })}
             className="w-full bg-surface-container-low border border-border/10 px-4 py-3.5 lg:px-0 lg:py-2 lg:bg-transparent lg:border-0 lg:border-b text-[16px] text-on-background placeholder:text-on-surface-variant/30 focus:outline-none focus:border-border/20 transition-all outline-none lg:focus:border-primary"
           />
-          <div className="absolute bottom-0 left-0 h-[1px] w-0 bg-primary group-focus-within:w-full transition-all duration-300 hidden lg:block" />
+          <div className="absolute bottom-0 left-0 h-px w-0 bg-primary group-focus-within:w-full transition-all duration-300 hidden lg:block" />
         </div>
       </div>
 
@@ -57,11 +57,11 @@ export function StepFoundation() {
               onClick={() => updateConfig({ vibe: v.value })}
               className={`flex items-center text-left p-4 lg:p-6 transition-all cursor-pointer w-full ${
                 selected
-                  ? "bg-overlay/5 border-l-2 border-primary border-y lg:border-r border-border/10"
+                  ? "bg-overlay/5 border-l-2 border-border/10 border-y lg:border-r"
                   : "bg-surface-container-low lg:bg-surface border border-border/10 hover:bg-overlay/5 lg:rounded-lg"
               } ${selected ? "" : "lg:rounded-lg"}`}
             >
-              <div className="flex flex-col flex-grow min-w-0">
+              <div className="flex flex-col grow min-w-0">
                 <div className="flex items-center gap-2 mb-0.5">
                   <span className={`material-symbols-outlined ${selected ? "text-primary" : "text-on-surface-variant"}`} style={{ fontVariationSettings: selected ? "'FILL' 1" : "" }}>{v.icon}</span>
                   <span className={`text-[16px] lg:text-[13px] font-mono ${selected ? "text-primary font-bold" : "text-on-surface"}`}>
