@@ -67,4 +67,15 @@ export const en: Translations = {
     help: "Help",
     settings: "Settings",
   },
+  modal: {
+    title: "Export Configuration",
+    subtitle: "Choose how to save your CLAUDE.md file.",
+    copyTitle: "Copy to Clipboard",
+    copyDesc: "Copy the full configuration to your clipboard.",
+    downloadTitle: "Download as File",
+    downloadDesc: "Save CLAUDE.md directly to your machine.",
+    cancel: "Cancel",
+    copied: "Copied to clipboard!",
+    downloaded: "File downloaded!",
+  },
 }

@@ -46,7 +46,7 @@ export function StepEcosystem() {
         ))}
       </div>
 
-      <div className="border-t border-border/5 pt-6 mt-8 flex justify-between items-center">
+      <div className="hidden lg:flex border-t border-border/5 pt-6 mt-8 justify-between items-center">
         <button
           type="button"
           onClick={prevStep}

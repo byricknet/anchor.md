@@ -67,4 +67,15 @@ export const esMX: Translations = {
     help: "Ayuda",
     settings: "Configuración",
   },
+  modal: {
+    title: "Exportar Configuración",
+    subtitle: "Elige cómo guardar tu archivo CLAUDE.md.",
+    copyTitle: "Copiar al Portapapeles",
+    copyDesc: "Copia la configuración completa a tu portapapeles.",
+    downloadTitle: "Descargar como Archivo",
+    downloadDesc: "Guarda CLAUDE.md directamente en tu equipo.",
+    cancel: "Cancelar",
+    copied: "¡Copiado al portapapeles!",
+    downloaded: "¡Archivo descargado!",
+  },
 }

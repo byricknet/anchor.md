@@ -4,7 +4,11 @@ import { useTranslation } from "../../../../i18n"
 import type { TechStack } from "../../../../types/schema"
 import { TechCard } from "../TechCard"
 
-export function StepCICD() {
+interface StepCICDProps {
+  onDone?: () => void
+}
+
+export function StepCICD({ onDone }: StepCICDProps) {
   const { config, updateConfig, prevStep } = useConfigStore()
   const { t } = useTranslation()
 
@@ -47,7 +51,7 @@ export function StepCICD() {
         />
       </div>
 
-      <div className="border-t border-border/5 pt-6 mt-8 flex justify-between items-center">
+      <div className="hidden lg:flex border-t border-border/5 pt-6 mt-8 justify-between items-center">
         <button
           type="button"
           onClick={prevStep}
@@ -57,7 +61,7 @@ export function StepCICD() {
         </button>
         <button
           type="button"
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          onClick={() => onDone?.()}
           className="text-[11px] font-semibold uppercase tracking-wider px-6 py-3 rounded bg-primary text-on-primary hover:bg-primary/90 transition-all flex items-center gap-2 cursor-pointer"
         >
           {t.cicd.done}

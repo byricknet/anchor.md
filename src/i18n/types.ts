@@ -65,4 +65,15 @@ export interface Translations {
     help: string
     settings: string
   }
+  modal: {
+    title: string
+    subtitle: string
+    copyTitle: string
+    copyDesc: string
+    downloadTitle: string
+    downloadDesc: string
+    cancel: string
+    copied: string
+    downloaded: string
+  }
 }
